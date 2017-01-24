@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication4.Models.Profile>
+<div id="ShowList">
+    <table border="1" class="table">
+        <thead>
+            <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อ</th>
+                <th>นามสกุล</th>
+                <th>อายุ</th>
+                <th></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var detail in Model)
+            {
+                <tr>
+                    <td>@detail.ProfileId</td>
+                    <td>@detail.ProName</td>
+                    <td>@detail.ProLname</td>
+                    <td>@detail.ProAge</td>
+                    <td>
+                        <a href="/Home/Formedit?ProfileId=@detail.ProfileId">Edit</a>
+                        <a href="/Home/Delete?ProfileId=@detail.ProfileId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

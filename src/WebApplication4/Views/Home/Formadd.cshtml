@@ -1,0 +1,19 @@
+﻿@model WebApplication4.Models.Profile
+<div class="container">
+    <form asp-controller="Home" asp-action="Add" method="post" class="form-horizontal" role="form">
+        <div class="form-group" style="margin-top:20px;">
+           <label for="text">Name: </label>
+            <input type="text" class="form-control" asp-for="ProName">
+        </div>
+        <div class="form-group">
+            <label for="text">LName: </label>
+            <input type="text" class="form-control" asp-for="ProLname">
+        </div>
+        <div class="form-group">
+            <label for="text">Age: </label>
+            <input type="text" class="form-control" asp-for="ProAge">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+

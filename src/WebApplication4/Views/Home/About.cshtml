@@ -1,0 +1,36 @@
+﻿
+<style>
+    
+    th{
+        text-align:center;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12" style="margin-top:20px;">
+            @* การวนแสดงข้อมูล *@
+            <a href ="/Home/Formadd" class="btn-default">ADD</a>
+            <div id="ShowList">
+               
+            </div>
+           
+        </div>
+       
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#ShowList").html("<img src='/images/Loading/Loading_icon.gif' width='100' />");
+            $.get("/Home/Getdata", { "Get": "Get" }, function (response) {
+                setTimeout(function () {
+                    $("#ShowList").replaceWith(response);
+                },500)
+            })
+        });
+        //$(function () {
+
+        //});
+    </script>
+   
+}
